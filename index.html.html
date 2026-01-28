@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이선자 푸드 - 정성으로 빚은 전통의 맛</title>
+    <meta name="description" content="이선자 푸드의 프리미엄 한과 선물세트. 전통의 맛과 현대적 감각이 어우러진 특별한 선물">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    
+    <style>
+/* ========================================
+   이선자 푸드 - 클래식 엘레강스 스타일
+   ======================================== */
+
+/* ========== 1. 기본 설정 / Base Styles ========== */
+:root {
+    /* 컬러 팔레트 - 수정 가능 */
+    --primary-color: #8B6F47;        /* 따뜻한 갈색 (한국 전통색) */
+    --secondary-color: #D4AF37;      /* 골드 */
+    --accent-color: #6B8E23;         /* 올리브 그린 */
+    --dark-color: #2C2C2C;
+    --light-color: #F8F6F3;          /* 아이보리 화이트 */
+    --text-color: #333333;
+    --text-light: #666666;
+    
+    /* 타이포그래피 */
+    --font-serif: 'Noto Serif KR', serif;
+    --font-sans: 'Noto Sans KR', sans-serif;
+    
+    /* 간격 */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    /* 그림자 */
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+    
+    /* 전환 효과 */
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-color);
+    line-height: 1.7;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* ========== 2. 컨테이너 / Container ========== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* ========== 3. 헤더 / Header ========== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.header.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--dark-color);
+    transition: var(--transition);
+}
+
+/* ========== 4. 히어로 섹션 / Hero Section ========== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--light-color) 0%, #ffffff 100%);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(139, 111, 71, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+    animation: bgFloat 20s ease-in-out infinite;
+}
+
+@keyframes bgFloat {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, 20px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.hero-title .highlight {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(212, 175, 55, 0.3);
+    z-index: -1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+.scroll-line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--primary-color), transparent);
+}
+
+/* ========== 5. 버튼 / Buttons ========== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-sans);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    background: #735a37;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+.btn-secondary:hover {
+    background: #c29d2e;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+.btn-large {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* ========== 6. 섹션 공통 스타일 / Section Styles ========== */
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ========== 7. 제품 섹션 / Products Section ========== */
+.products {
+    background: var(--light-color);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-overlay {
+    opacity: 1;
+}
+
+.product-info {
+    padding: 2rem;
+    position: relative;
+}
+
+.product-badge {
+    position: absolute;
+    top: -20px;
+    right: 2rem;
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+}
+
+.product-name {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.product-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.product-features span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.product-features i {
+    color: var(--accent-color);
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.product-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-label {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+}
+
+.price {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* ========== 8. 브랜드 스토리 섹션 / About Section ========== */
+.about {
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text {
+    padding-right: 2rem;
+}
+
+.about-description {
+    margin-bottom: 2rem;
+}
+
+.about-description p {
+    margin-bottom: 1rem;
+    line-height: 1.9;
+    color: var(--text-light);
+}
+
+.about-values {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-values li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.about-values i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.about-values h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--dark-color);
+}
+
+.about-values p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-image::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 200px;
+    height: 200px;
+    background: var(--secondary-color);
+    opacity: 0.2;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* ========== 9. 특징 섹션 / Features Section ========== */
+.features {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #6d5537 100%);
+    color: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.feature-icon i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.feature-item h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-item p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+}
+
+/* ========== 10. 주문/문의 섹션 / Contact Section ========== */
+.contact {
+    background: var(--light-color);
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-description {
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.contact-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.contact-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ========== 11. 푸터 / Footer ========== */
+.footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo img {
+    height: 60px;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1);
+}
+
+.footer-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.footer-info p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    transform: translateY(-3px);
+}
+
+.social-links i {
+    font-size: 1.25rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+/* ========== 12. 반응형 디자인 / Responsive Design ========== */
+
+/* 태블릿 */
+@media (max-width: 968px) {
+    :root {
+        --spacing-lg: 3rem;
+        --spacing-xl: 4rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        padding: 6rem 2rem 2rem;
+        box-shadow: var(--shadow-lg);
+        transition: right 0.4s ease;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-text {
+        padding-right: 0;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* 모바일 */
+@media (max-width: 640px) {
+    :root {
+        --spacing-md: 1rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+    }
+    
+    .hero {
+        height: 90vh;
+    }
+    
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .product-card {
+        border-radius: 15px;
+    }
+    
+    .product-info {
+        padding: 1.5rem;
+    }
+    
+    .product-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .product-bottom .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+    }
+    
+    .contact-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* 작은 모바일 */
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .nav-container {
+        padding: 0.75rem 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- 헤더 / Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="https://www.genspark.ai/api/files/s/TS9LfO1s" alt="이선자 푸드 로고">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#products">제품소개</a></li>
+                    <li><a href="#about">브랜드</a></li>
+                    <li><a href="#contact">주문문의</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 히어로 섹션 / Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                정성으로 빚은<br>
+                <span class="highlight">전통의 맛</span>
+            </h1>
+            <p class="hero-subtitle">
+                한국의 아름다운 맛과 멋을 담은 프리미엄 한과 선물세트
+            </p>
+            <a href="#products" class="btn btn-primary">제품 둘러보기</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- 제품 소개 섹션 / Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Products</span>
+                <h2 class="section-title">프리미엄 선물세트</h2>
+                <p class="section-description">
+                    엄선된 재료와 정성으로 만든 이선자 푸드의 특별한 한과를<br>
+                    소중한 분들께 선물하세요
+                </p>
+            </div>
+
+            <div class="products-grid">
+                <!-- 일반상자세트 -->
+                <div class="product-card" data-aos="fade-up">
+                    <div class="product-image">
+                        <img src="https://www.genspark.ai/api/files/s/h5ty8HmF" alt="일반상자세트">
+                        <div class="product-overlay">
+                            <button class="btn btn-outline">자세히 보기</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">일반상자세트</h3>
+                        <p class="product-description">
+                            <!-- 수정 가능: 제품 설명을 여기에 작성하세요 -->
+                            다양한 한과를 맛볼 수 있는 베스트 구성.<br>
+                            소중한 마음을 전하는 정성스러운 선물
+                        </p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> 전통 방식</span>
+                            <span><i class="fas fa-check"></i> 프리미엄 재료</span>
+                            <span><i class="fas fa-check"></i> 정성스러운 포장</span>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">
+                                <span class="price-label">가격</span>
+                                <span class="price">30,000원</span>
+                            </div>
+                            <button class="btn btn-secondary">주문하기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 한지상자세트 -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="https://www.genspark.ai/api/files/s/AJsM2A0l" alt="한지상자세트">
+                        <div class="product-overlay">
+                            <button class="btn btn-outline">자세히 보기</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-badge">Premium</div>
+                        <h3 class="product-name">한지상자세트</h3>
+                        <p class="product-description">
+                            <!-- 수정 가능: 제품 설명을 여기에 작성하세요 -->
+                            전통 한지로 마감한 프리미엄 선물세트.<br>
+                            격조 높은 선물을 원하시는 분께 추천
+                        </p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> 한지 고급 포장</span>
+                            <span><i class="fas fa-check"></i> 프리미엄 구성</span>
+                            <span><i class="fas fa-check"></i> 특별한 선물</span>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">
+                                <span class="price-label">가격</span>
+                                <span class="price">50,000원</span>
+                            </div>
+                            <button class="btn btn-secondary">주문하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 브랜드 스토리 섹션 / Brand Story Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">이선자 푸드 이야기</h2>
+                    <div class="about-description">
+                        <!-- 수정 가능: 브랜드 스토리를 여기에 작성하세요 -->
+                        <p>
+                            이선자 푸드는 전통 한과의 맛과 멋을 현대적 감각으로 재해석하여<br>
+                            고품격 선물 문화를 만들어가고 있습니다.
+                        </p>
+                        <p>
+                            엄선된 국내산 재료와 정성스러운 손길로 만든 한과는<br>
+                            소중한 분들께 마음을 전하는 특별한 선물이 됩니다.
+                        </p>
+                    </div>
+                    <ul class="about-values">
+                        <li>
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>엄선된 재료</h4>
+                                <p>국내산 프리미엄 재료만을 사용합니다</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <div>
+                                <h4>전통 방식</h4>
+                                <p>전통 제조 방식을 고수합니다</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>프리미엄 품질</h4>
+                                <p>최고의 품질을 약속드립니다</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <img src="https://www.genspark.ai/api/files/s/AJsM2A0l" alt="이선자 푸드 제품">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 특징 섹션 / Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>프리미엄 재료</h3>
+                    <p>
+                        <!-- 수정 가능: 특징 설명을 여기에 작성하세요 -->
+                        엄선된 국내산 재료로<br>건강하고 맛있게
+                    </p>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>정성스런 손길</h3>
+                    <p>
+                        <!-- 수정 가능: 특징 설명을 여기에 작성하세요 -->
+                        하나하나 정성을 담아<br>정직하게 만듭니다
+                    </p>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>품격있는 포장</h3>
+                    <p>
+                        <!-- 수정 가능: 특징 설명을 여기에 작성하세요 -->
+                        받는 분의 마음까지<br>생각한 고급 포장
+                    </p>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>마음을 담은 선물</h3>
+                    <p>
+                        <!-- 수정 가능: 특징 설명을 여기에 작성하세요 -->
+                        소중한 분들께<br>특별한 마음을 전하세요
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 주문/문의 섹션 / Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content" data-aos="fade-up">
+                <h2 class="section-title">주문 및 문의</h2>
+                <p class="contact-description">
+                    <!-- 수정 가능: 주문 안내 문구를 여기에 작성하세요 -->
+                    이선자 푸드의 프리미엄 한과 선물세트를 주문하시려면<br>
+                    아래 연락처로 문의해 주세요
+                </p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>전화 문의</h4>
+                            <!-- 수정 가능: 전화번호를 여기에 입력하세요 -->
+                            <p>000-0000-0000</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>위치</h4>
+                            <!-- 수정 가능: 주소를 여기에 입력하세요 -->
+                            <p>주소 미정</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>운영 시간</h4>
+                            <!-- 수정 가능: 운영 시간을 여기에 입력하세요 -->
+                            <p>평일 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-buttons">
+                    <button class="btn btn-primary btn-large">
+                        <i class="fas fa-phone"></i>
+                        전화 문의하기
+                    </button>
+                    <button class="btn btn-outline btn-large">
+                        <i class="fab fa-kakao"></i>
+                        카카오톡 문의
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 / Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://www.genspark.ai/api/files/s/TS9LfO1s" alt="이선자 푸드">
+                </div>
+                <div class="footer-info">
+                    <h3>이선자 푸드</h3>
+                    <!-- 수정 가능: 사업자 정보를 여기에 입력하세요 -->
+                    <p>위치: 주소 미정</p>
+                    <p>연락처: 000-0000-0000</p>
+                    <p>이메일: info@leesunja-food.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="#products">제품소개</a></li>
+                        <li><a href="#about">브랜드 스토리</a></li>
+                        <li><a href="#contact">주문문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>SNS</h4>
+                    <!-- 수정 가능: SNS 링크를 여기에 추가하세요 -->
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="KakaoTalk"><i class="fab fa-kakao"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 이선자 푸드. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+/**
+ * 이선자 푸드 - 랜딩 페이지 JavaScript
+ */
+
+// AOS (Animate On Scroll) 초기화
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    }
+    
+    initNavigation();
+    initSmoothScroll();
+    initScrollEffects();
+    initProductButtons();
+    initContactButtons();
+});
+
+// 네비게이션 메뉴
+function initNavigation() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            
+            const spans = this.querySelectorAll('span');
+            spans[0].style.transform = navMenu.classList.contains('active') 
+                ? 'rotate(45deg) translate(5px, 5px)' 
+                : 'none';
+            spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
+            spans[2].style.transform = navMenu.classList.contains('active') 
+                ? 'rotate(-45deg) translate(7px, -7px)' 
+                : 'none';
+        });
+    }
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 968) {
+                navMenu.classList.remove('active');
+                const spans = navToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-container')) {
+            navMenu.classList.remove('active');
+            if (navToggle) {
+                const spans = navToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        }
+    });
+}
+
+// 부드러운 스크롤
+function initSmoothScroll() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            if (href === '#') {
+                e.preventDefault();
+                return;
+            }
+            
+            const target = document.querySelector(href);
+            
+            if (target) {
+                e.preventDefault();
+                
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+// 스크롤 효과
+function initScrollEffects() {
+    const header = document.querySelector('.header');
+    
+    window.addEventListener('scroll', function() {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '1';
+            }
+        });
+    }
+}
+
+// 제품 버튼 기능
+function initProductButtons() {
+    const detailButtons = document.querySelectorAll('.product-overlay .btn');
+    detailButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('.product-name').textContent;
+            
+            showProductModal(productName);
+        });
+    });
+    
+    const orderButtons = document.querySelectorAll('.product-bottom .btn-secondary');
+    orderButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('.product-name').textContent;
+            const productPrice = productCard.querySelector('.price').textContent;
+            
+            handleOrder(productName, productPrice);
+        });
+    });
+}
+
+// 제품 모달
+function showProductModal(productName) {
+    alert(`${productName}의 상세 정보를 표시합니다.\n\n이 기능은 나중에 커스터마이징할 수 있습니다.`);
+}
+
+// 주문 처리
+function handleOrder(productName, productPrice) {
+    const message = `[주문 문의]\n상품: ${productName}\n가격: ${productPrice}`;
+    
+    // 수정 가능: 실제 주문 시스템 연결
+    // window.location.href = 'tel:000-0000-0000';
+    // window.open('http://pf.kakao.com/_your_channel_id/chat', '_blank');
+    
+    alert(message + '\n\n전화번호나 카카오톡 채널을 연결하려면\n코드를 수정하세요.');
+}
+
+// 연락처 버튼 기능
+function initContactButtons() {
+    const phoneButton = document.querySelector('.contact-buttons .btn-primary');
+    if (phoneButton) {
+        phoneButton.addEventListener('click', function() {
+            const phoneNumber = '000-0000-0000';
+            
+            // 수정 가능: 실제 전화 연결
+            // window.location.href = `tel:${phoneNumber.replace(/-/g, '')}`;
+            
+            alert(`전화번호: ${phoneNumber}\n\n실제 전화 연결을 원하시면 코드를 수정하세요.`);
+        });
+    }
+    
+    const kakaoButton = document.querySelector('.contact-buttons .btn-outline');
+    if (kakaoButton) {
+        kakaoButton.addEventListener('click', function() {
+            // 수정 가능: 실제 카카오톡 채널 연결
+            // window.open('http://pf.kakao.com/_your_channel_id/chat', '_blank');
+            
+            alert('카카오톡 채널로 연결됩니다.\n\n실제 카카오톡 채널을 연결하려면 코드를 수정하세요.');
+        });
+    }
+}
+
+// 페이지 로드 애니메이션
+window.addEventListener('load', function() {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+});
+    </script>
+</body>
+</html>
